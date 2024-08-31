@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <DashboardWrapper>
-        <body className={inter.className}>{children}</body>
-      </DashboardWrapper>
+      <body className={inter.className}>
+        <DashboardWrapper>{children}</DashboardWrapper>
+      </body>
     </html>
   );
 }
