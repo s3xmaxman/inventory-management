@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import React from "react";
 
 type Props = {};
@@ -9,7 +10,7 @@ const DashboardWrapper = ({ children }: { children: React.ReactNode }) => {
       <main
         className={`flex flex-col w-full h-full py-7 px-9 bg-grey-50 md:pl-24`}
       >
-        Navbar
+        <Navbar />
         {children}
       </main>
     </div>
