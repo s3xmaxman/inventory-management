@@ -9,10 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getDashBoardMetrics = void 0;
+exports.getDashboardMetrics = void 0;
 const client_1 = require("@prisma/client");
 const prisma = new client_1.PrismaClient();
-const getDashBoardMetrics = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getDashboardMetrics = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const getMetrics = (model, take) => __awaiter(void 0, void 0, void 0, function* () {
             return yield model.findMany({
@@ -47,4 +47,4 @@ const getDashBoardMetrics = (req, res) => __awaiter(void 0, void 0, void 0, func
             .json({ error: "ダッシュボードメトリックの取得に失敗しました" });
     }
 });
-exports.getDashBoardMetrics = getDashBoardMetrics;
+exports.getDashboardMetrics = getDashboardMetrics;
