@@ -13,10 +13,10 @@ async function deleteAllData(orderedFileNames: string[]) {
     const model: any = prisma[modelName as keyof typeof prisma];
     if (model) {
       await model.deleteMany({});
-      console.log(`Cleared data from ${modelName}`);
+      console.log(`${modelName} のデータをクリアしました`);
     } else {
       console.error(
-        `Model ${modelName} not found. Please ensure the model name is correctly specified.`
+        `${modelName} モデルが見つかりませんでした。モデル名が正しく指定されていることを確認してください。`
       );
     }
   }
