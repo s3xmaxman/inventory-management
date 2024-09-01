@@ -11,6 +11,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 // 以下にルートのインポートを追加
+import dashboardRoutes from "./routes/dashboardRoutes";
 
 /**
  * 環境変数の読み込みとExpressアプリの初期化
@@ -28,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // URLエンコードされ
 app.use(cors()); // CORSの設定
 
 // ルートの設定
-
+app.use("/dashboard", dashboardRoutes);
 /**
  * サーバーの起動
  * @param port サーバーのポート番号
