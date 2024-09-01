@@ -68,4 +68,4 @@ export const api = createApi({
   }),
 });
 
-export const {} = api;
+export const { useGetDashboardMetricsQuery } = api;
