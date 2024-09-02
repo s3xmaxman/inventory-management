@@ -32,6 +32,7 @@ app.use(cors()); // CORSの設定
 // ルートの設定
 app.use("/dashboard", dashboardRoutes);
 app.use("/products", productRoutes);
+
 /**
  * サーバーの起動
  * @param port サーバーのポート番号
