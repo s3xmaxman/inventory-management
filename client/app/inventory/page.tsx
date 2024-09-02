@@ -56,7 +56,7 @@ const Inventory = () => {
         className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
         sx={{
           "& .MuiCheckbox-root": {
-            color: isDarkMode ? "white" : "inherit",
+            color: "inherit",
           },
         }}
       />

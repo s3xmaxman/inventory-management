@@ -35,4 +35,14 @@ body,
   .dark .MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
     @apply text-gray-300;
   }
+
+  /* ダークモード時のDataGridのボトムの色を調整 */
+  .dark .MuiDataGrid-root .MuiDataGrid-footerContainer {
+    @apply bg-gray-800;
+  }
+
+  /* ダークモード時のDataGridのページネーションの色を調整 */
+  .dark .MuiDataGrid-root .MuiTablePagination-root {
+    @apply text-gray-300;
+  }
 }
