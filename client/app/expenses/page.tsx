@@ -44,7 +44,7 @@ const Expenses = () => {
   };
 
   const aggregatedData: AggregatedDataItem[] = useMemo(() => {
-    // カテゴリと日付で絞り込む
+    // カテゴリと日付でフィルタリング
     const filteredExpenses = expenses.filter(
       (data: ExpenseByCategorySummary) => {
         const matchesCategory =
@@ -58,20 +58,24 @@ const Expenses = () => {
       }
     );
 
-    // カテゴリごとに集計する
-    const aggregatedData: AggregatedData = {};
-    filteredExpenses.forEach((data: ExpenseByCategorySummary) => {
-      const amount = parseInt(data.amount);
-      if (!aggregatedData[data.category]) {
-        aggregatedData[data.category] = {
-          name: data.category,
-          amount: 0,
-          color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-        };
-      }
-      aggregatedData[data.category].amount += amount;
-    });
+    // フィルタリングされたデータをカテゴリ別に集計
+    const aggregatedData = filteredExpenses.reduce(
+      (acc: AggregatedData, data: ExpenseByCategorySummary) => {
+        const amount = parseInt(data.amount);
+        if (!acc[data.category]) {
+          acc[data.category] = {
+            name: data.category,
+            amount: 0,
+            color: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+          };
+        }
+        acc[data.category].amount += amount;
+        return acc;
+      },
+      {}
+    );
 
+    // 集計データを配列に変換
     return Object.values(aggregatedData);
   }, [expenses, selectedCategory, startDate, endDate]);
 
