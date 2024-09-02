@@ -12,6 +12,7 @@ import morgan from "morgan";
 
 // 以下にルートのインポートを追加
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 
 /**
  * 環境変数の読み込みとExpressアプリの初期化
@@ -30,6 +31,7 @@ app.use(cors()); // CORSの設定
 
 // ルートの設定
 app.use("/dashboard", dashboardRoutes);
+app.use("/products", productRoutes);
 /**
  * サーバーの起動
  * @param port サーバーのポート番号

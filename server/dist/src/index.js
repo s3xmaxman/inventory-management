@@ -15,6 +15,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const morgan_1 = __importDefault(require("morgan"));
 // 以下にルートのインポートを追加
 const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
+const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
 /**
  * 環境変数の読み込みとExpressアプリの初期化
  */
@@ -30,6 +31,7 @@ app.use(body_parser_1.default.urlencoded({ extended: false })); // URLエンコ�
 app.use((0, cors_1.default)()); // CORSの設定
 // ルートの設定
 app.use("/dashboard", dashboardRoutes_1.default);
+app.use("/products", productRoutes_1.default);
 /**
  * サーバーの起動
  * @param port サーバーのポート番号
