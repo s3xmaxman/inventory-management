@@ -30,3 +30,9 @@ body,
     grid-template-rows: repeat(8, 7.5vh);
   }
 }
+
+@layer components {
+  .dark .MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
+    @apply text-gray-300;
+  }
+}
