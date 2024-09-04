@@ -85,6 +85,7 @@ const CardSalesSummary = () => {
                 <option value="monthly">Monthly</option>
               </select>
             </div>
+
             {/* CHART */}
             <ResponsiveContainer width="100%" height={350} className="px-7">
               <BarChart
